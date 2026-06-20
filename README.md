@@ -8,7 +8,7 @@ into an orbital Earth-defense sequence — one continuous WebGL scene.
 
 **https://alexshen1227-spec.github.io/Space-Invader-Game/**
 
-(Deployed automatically from `main` via GitHub Pages.)
+(GitHub Pages serves it straight from `main` / root — every push to `main` redeploys.)
 
 ## Run locally
 
@@ -26,7 +26,7 @@ python -m http.server 8123
 | --- | --- |
 | `index.html` | The deployable page. Contains the importmap, all UI/CSS, and an **inlined copy of `main.js`**. This is what GitHub Pages serves. |
 | `main.js` | Source of truth for the game logic. After editing, re-inline it into `index.html`. |
-| `.github/workflows/deploy-pages.yml` | Builds and publishes the site to GitHub Pages on every push to `main`. |
+| `.nojekyll` | Tells GitHub Pages to serve the files as-is (no Jekyll processing). |
 
 > **Note:** `index.html` ships with `main.js` inlined so the file works when opened
 > directly. After changing `main.js`, replace the inline `<script type="module">…</script>`
